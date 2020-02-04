@@ -7,7 +7,7 @@ class App extends React.Component{
   
   render(){
     return(
-      <HomePage firstName="Dan" />
+      <HomePage firstName="Amiel" />
     );
   }
 
