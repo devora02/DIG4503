@@ -1,21 +1,13 @@
 {
-  "name": "dig4503",
+  "name": "lab4",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/devora02/DIG4503.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/devora02/DIG4503/issues"
-  },
-  "homepage": "https://github.com/devora02/DIG4503#readme",
   "dependencies": {
     "chalk": "^3.0.0",
     "express": "^4.17.1",
