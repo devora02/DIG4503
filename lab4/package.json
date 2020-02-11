@@ -6,11 +6,19 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+<<<<<<< HEAD
+=======
+  "keywords": [],
+>>>>>>> d0356bddb8fab4601ba47530271c699519ad2f19
   "author": "",
   "license": "ISC",
   "dependencies": {
     "chalk": "^3.0.0",
     "express": "^4.17.1",
+<<<<<<< HEAD
+=======
+    "faker": "^4.1.0",
+>>>>>>> d0356bddb8fab4601ba47530271c699519ad2f19
     "json-pokemon": "^1.0.0"
   }
 }
