@@ -1,42 +1,36 @@
 const Express = require("express");
 const App = Express();
 const port = 80;
+const chalk = require('chalk');
+const pokemon = require('json-pokemon');
 
-//const Person = require("./Person.js");
-//const faker = require('faker');
 
-const pokemons = require('./json-pokemon.js');
-const pokemon = pokemons[0];
-
-let people = [];
-
-for(let i = 0; i < 99; i++)
-{
-    let name = faker.name.findName();
-    let color = faker.commerce.color();
-    people.push(new Person(name, color));
-}
-
-App.get("/people/name/:name", (req, res) => {
-    people.forEach((value)=> {
-        if(value.name == req.params.name) {
-            res.send(value);
+App.get("/id/:id", (req, res) => {
+    let result = {"error": "invalid"};
+    pokemon.forEach((value)=> {
+        if(value.id == req.params.id) {
+             result = value;
         }
     });
-
-    res.send("Invalid!");
-
+   if(result.error){ 
+    console.log(chalk.red(req.path));
+   }
+     else {console.log(chalk.green(req.path));}
+     res.send(result);
 });
 
-App.get("/people/color/:color", (req, res) => {
-    people.forEach((value)=> {
-        if(value.color == req.params.color) {
-            res.send(value);
+App.get("/name/:name", (req, res) => {
+    let result = {"error": "invalid"};
+    pokemon.forEach((value)=> {
+        if(value.name == req.params.name) {
+            result = value;
         }
     });
-
-    res.send("Invalid!");
-
+    if(result.error){ 
+        console.log(chalk.red(req.path));
+       }
+         else {console.log(chalk.green(req.path));}
+         res.send(result);
 });
 
 App.listen(port, () => {
