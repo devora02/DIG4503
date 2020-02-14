@@ -4,9 +4,13 @@ const port = 80;
 const chalk = require('chalk');
 const pokemon = require('json-pokemon');
 
+App.use("/", Express.static("public"));
 
+//FOR ID NUMBER OF POKEMON
 App.get("/id/:id", (req, res) => {
-    let result = {"error": "invalid"};
+
+    let result = {"error": "Invalid"};
+
     pokemon.forEach((value)=> {
         if(value.id == req.params.id) {
              result = value;
@@ -16,9 +20,11 @@ App.get("/id/:id", (req, res) => {
     console.log(chalk.red(req.path));
    }
      else {console.log(chalk.green(req.path));}
-     res.send(result);
+     //RESPONSES USES JSON()
+     res.json(result);
 });
 
+//FOR NAME OF POKEMON
 App.get("/name/:name", (req, res) => {
     let result = {"error": "invalid"};
     pokemon.forEach((value)=> {
@@ -30,9 +36,11 @@ App.get("/name/:name", (req, res) => {
         console.log(chalk.red(req.path));
        }
          else {console.log(chalk.green(req.path));}
-         res.send(result);
+         //RESPONSES USES JSON()
+         res.json(result);
 });
 
+//SERVER IS LISTENING
 App.listen(port, () => {
     console.log("Server running!");
 });
