@@ -8,36 +8,37 @@ App.use("/", Express.static("public"));
 
 //FOR ID NUMBER OF POKEMON
 App.get("/id/:id", (req, res) => {
-
     let result = {"error": "Invalid"};
 
     pokemon.forEach((value)=> {
-        if(value.id == req.params.id) {
+        if(req.params.id == value.id) {
              result = value;
         }
     });
-   if(result.error){ 
-    console.log(chalk.red(req.path));
-   }
-     else {console.log(chalk.green(req.path));}
      //RESPONSES USES JSON()
      res.json(result);
+     if(result.error){
+         console.log(chalk.red(req.path));
+     }
+     else{console.log(chalk.green(req.path));
+    }
 });
 
 //FOR NAME OF POKEMON
 App.get("/name/:name", (req, res) => {
-    let result = {"error": "invalid"};
+    let result = {"error": "Invalid"};
     pokemon.forEach((value)=> {
-        if(value.name == req.params.name) {
+        if(req.params.name == value.name) {
             result = value;
         }
     });
-    if(result.error){ 
-        console.log(chalk.red(req.path));
-       }
-         else {console.log(chalk.green(req.path));}
          //RESPONSES USES JSON()
          res.json(result);
+         if(result.error){
+            console.log(chalk.red(req.path));
+        }
+        else{console.log(chalk.green(req.path));
+       }
 });
 
 //SERVER IS LISTENING
