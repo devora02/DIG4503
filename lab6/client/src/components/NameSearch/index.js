@@ -8,7 +8,7 @@ class NameSearch extends React.Component {
 
         let element = document.querySelector("#name");
 
-        fetch("/name/" + element.value)
+        fetch("http://localhost:80/name/" + element.value)
         .then((res) => {
             return res.json();
         })
@@ -22,6 +22,8 @@ class NameSearch extends React.Component {
                 reporting.innerHTML = processed.name;
             }
         });
+
+        element.value = "";
     }
 
     render() {

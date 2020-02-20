@@ -8,7 +8,7 @@ function App(){
     <IdSearch/>
     <NameSearch/>
     <h2>Reporting</h2>
-    <div id="reportingArea"></div>
+    <div id="resultArea"></div>
     </div>
   );
 }
