@@ -3,8 +3,11 @@ const App = Express();
 const port = 80;
 const chalk = require('chalk');
 const pokemon = require('json-pokemon');
+const cors = require("cors");
+App.use(cors());
 
-App.use("/", Express.static("public"));
+
+App.use("/", Express.static("client/build"));
 
 //FOR ID NUMBER OF POKEMON
 App.get("/id/:id", (req, res) => {
