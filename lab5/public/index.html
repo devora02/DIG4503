@@ -1,6 +1,9 @@
 <html<>
-    <body>
-
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <link href="//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon+Solid" rel="stylesheet" type="text/css"/>
+    </head>
+    <body >
         <script>
             function pokemonID(event){
                 //STOP THE DEFAULT FORM ACTION
@@ -46,25 +49,28 @@
                 });
             }
         </script>
-        
-        <h1>
-            Pokemon ID:
+        <div>
+            <h1 class="mainHeader">POKEDEX SEARCH!</h1>
+        </div>
+        <div class="divContainer">
+        <h1 class="headerOne">
+            Pokemon ID
         </h1>
-        <form onsubmit="pokemonID(event)">
-            <input id="id" type="text">
-            <button>Submit!</button>
+        <form class="inputOne" onsubmit="pokemonID(event)">
+            <button class="myButton">Submit!</button>
+            <input class="css-input" id="id" type="text">
         </form>
 
-        <h1>
-            Pokemon Name:
+        <h1 class="headerTwo">
+            Pokemon Name
         </h1>
-        <form onsubmit="pokemonName(event)">
-            <input id="name" type="text">
-            <button>Submit!</button>
+        <form class="inputOne" onsubmit="pokemonName(event)">
+            <button class="myButton">Submit!</button>
+            <input  class="css-input" id="name" type="text">
         </form>
 
-        <h1>Result!</h1>
+        <h1 class="headerThree">Result!</h1>
         <div id="resultArea"></div>
-
+        </div>
     </body>
 </html>
