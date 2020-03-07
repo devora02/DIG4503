@@ -7,7 +7,7 @@ const URL = "mongodb+srv://amieldevora:Js585WOJYkqpAPrL@cluster0-tc9sb.mongodb.n
 // Define a new object, Database
 // 
 // It will have:
-// Properties
+// Propertiesa
 // -- Connection object
 // -- Collection object
 //
