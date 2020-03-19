@@ -8,7 +8,7 @@ class IdSearch extends React.Component {
 
         let element = document.querySelector("#id");
 
-        fetch("http://localhost:80/id/" + element.value)
+        fetch("/api/pokemon/id/" + element.value)
         .then((res) => {
             return res.json();
         })
