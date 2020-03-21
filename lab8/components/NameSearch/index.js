@@ -1,44 +1,36 @@
-import React from 'react';
-
 class NameSearch extends React.Component {
-    
-    pokemonName(event){
-        //STOP THE DEFAULT FORM ACTION
-        event.preventDefault();
 
-        let element = document.querySelector("#name");
+    getName() {
 
-        fetch("/api/pokemon/name/" + element.value)
-        .then((res) => {
-            return res.json();
-        })
-        .then((processed) => {
+      let name = document.querySelector("#nameInput");
+  
+      fetch("/api/pokemon/name/" + name.value)
+      .then((res) => { return res.json(); } )
+      .then((processed) => {
+        
+        let resultElement = document.querySelector("#results");
+  
+        if(processed.error) {
 
-            let reporting = document.querySelector("#resultArea");
+          resultElement.innerHTML = "Could not find!";
+        } else {
 
-            if(processed.error) {
-                reporting.innerHTML = processed.error;
-            } else {
-                reporting.innerHTML = processed.name;
-            }
-        });
-
-        element.value = "";
+          resultElement.innerHTML = "Its ID is " + processed.id;
+        }
+  
+      });
     }
-
+  
     render() {
-        return (
-            <div>
-                <h1>Pokemon Name:</h1>
-                <form onSubmit={this.pokemonName}>
-                    <input id="name" type="text"/>
-                    <button>Submit!</button>
-                </form>
-            </div>
-        );
+      return (
+        <div>
+          <input type="text" id="nameInput" />
+          <button onClick={() => { this.getName() } }>SUBMIT</button>
+          <div id="results"></div>
+        </div>
+      );
     }
-
-
-}
-
-export default NameSearch;
+  
+  }
+  
+  export default NameSearch;

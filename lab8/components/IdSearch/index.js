@@ -1,44 +1,38 @@
-import React from 'react';
-
 class IdSearch extends React.Component {
-    
-    pokemonID(event){
-        //STOP THE DEFAULT FORM ACTION
-        event.preventDefault();
 
-        let element = document.querySelector("#id");
+    getId() {
 
-        fetch("/api/pokemon/id/" + element.value)
-        .then((res) => {
-            return res.json();
-        })
-        .then((processed) => {
+      let name = document.querySelector("#idInput");
+  
+      fetch("/api/pokemon/id/" + name.value)
+      .then((res) => { return res.json(); } )
+      .then((processed) => {
+        
 
-            let reporting = document.querySelector("#resultArea");
+        let resultElement = document.querySelector("#results");
+  
 
-            if(processed.error) {
-                reporting.innerHTML = processed.error;
-            } else {
-                reporting.innerHTML = processed.name;
-            }
-        });
+        if(processed.error) {
 
-        element.value = "";
+          resultElement.innerHTML = "Could not find!";
+        } else {
+
+          resultElement.innerHTML = "Its ID is " + processed.id;
+        }
+  
+      });
     }
-
+  
     render() {
-        return (
-            <div>
-                <h1>Pokemon ID:</h1>
-                <form onSubmit={this.pokemonID}>
-                    <input id="id" type="text"/>
-                    <button>Submit!</button>
-                </form>
-            </div>
-        );
+      return (
+        <div>
+          <input type="text" id="idInput" />
+          <button onClick={() => { this.getId() } }>SUBMIT</button>
+          <div id="results"></div>
+        </div>
+      );
     }
-
-
-}
-
-export default IdSearch;
+  
+  }
+  
+  export default IdSearch;
