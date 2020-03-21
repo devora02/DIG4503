@@ -15,7 +15,7 @@ class NameSearch extends React.Component {
           resultElement.innerHTML = "Could not find!";
         } else {
 
-          resultElement.innerHTML = "Its ID is " + processed.id;
+          resultElement.innerHTML = "Its NAME is " + processed.name;
         }
   
       });
