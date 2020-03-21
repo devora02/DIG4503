@@ -1,16 +1,8 @@
-import React from 'react';
-import IdSearch from './components/IdSearch/';
-import NameSearch from './components/NameSearch/';
-
-function App(){
-  return(
-    <div>
-    <IdSearch/>
-    <NameSearch/>
-    <h2>Reporting</h2>
-    <div id="resultArea"></div>
-    </div>
+const Home = () => {
+  return (
+    <p>Hi!</p>
   );
 }
 
-export default App;
+export default Home;
+
