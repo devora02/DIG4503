@@ -2,9 +2,9 @@ class IdSearch extends React.Component {
 
     getId() {
 
-      let name = document.querySelector("#idInput");
+      let id = document.querySelector("#idInput");
   
-      fetch("/api/pokemon/id/" + name.value)
+      fetch("http://localhost:3000/api/pokemon/id/" + id.value)
       .then((res) => { return res.json(); } )
       .then((processed) => {
         
@@ -28,7 +28,6 @@ class IdSearch extends React.Component {
         <div>
           <input type="text" id="idInput" />
           <button onClick={() => { this.getId() } }>SUBMIT</button>
-          <div id="results"></div>
         </div>
       );
     }
