@@ -4,7 +4,7 @@ export default (req, res) => {
 
     let result = {"error": "Could not find type."};
 
-    let pokemon = getPokemon.getPokemonByType(req.query.type);
+    let pokemon = getPokemon.getPokemonBytypeList(req.query.typeList);
 
     if(pokemon !== null) {
         result = pokemon;
