@@ -1,7 +1,5 @@
-import React from 'react';
-import IdSearch from "../components/IdSearch/";
-import NameSearch from "../components/NameSearch/";
-import TypeSearch from "../components/TypeSearch";
+import Head from 'next/head';
+import Link from 'next/link';
 
 const Home = () => {
   return (
