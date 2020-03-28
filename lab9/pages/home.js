@@ -1,10 +1,12 @@
-import Head from 'next/head';
-import Link from 'next/link';
+import React from 'react';
+import IdSearch from "../components/IdSearch";
+import NameSearch from "../components/NameSearch";
+import TypeSearch from "../components/TypeSearch";
 
 const Home = () => {
   return (
     <div>
-    <h1>POKEMON!</h1>
+    <HeadLink/>
     <h2>ID:</h2>
     <IdSearch/>
     <h2>NAME:</h2>
