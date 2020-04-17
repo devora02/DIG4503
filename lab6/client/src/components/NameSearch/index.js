@@ -1,4 +1,5 @@
 import React from 'react';
+import "./index.css"
 
 class NameSearch extends React.Component {
     
@@ -29,10 +30,12 @@ class NameSearch extends React.Component {
     render() {
         return (
             <div>
-                <h1>Pokemon Name:</h1>
-                <form onSubmit={this.pokemonName}>
-                    <input id="name" type="text"/>
+                <form className="formOne" onSubmit={this.pokemonName}>
+                    <h1>Pokemon Name:</h1>
+                    <input id="name" type="text"/><br/>
                     <button>Submit!</button>
+                    <h2>POKEMON</h2>
+                    <div id="resultArea"></div>
                 </form>
             </div>
         );

@@ -7,7 +7,6 @@ function App(){
     <div>
     <IdSearch/>
     <NameSearch/>
-    <h2>Reporting</h2>
     <div id="resultArea"></div>
     </div>
   );
